@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Tommy Kneeland · Funk / Jazz / Brass</title>
+<meta name="description" content="Tommy Kneeland, funk and jazz horn player. New solo singles 'Hey V' (Jul 9) and 'Can't Touch The Funk' (Jul 23). Pre-save now." />
+<!-- Open Graph (for nice link previews when shared) -->
+<meta property="og:title" content="Tommy Kneeland · Funk / Jazz / Brass" />
+<meta property="og:description" content="New solo singles: 'Hey V' (Jul 9) & 'Can't Touch The Funk' (Jul 23). Pre-save now." />
+<meta property="og:type" content="website" />
+<meta property="og:image" content="hey-v.jpg" />
+<style>
+  :root{
+    --bg:#120d1a;
+    --bg2:#1c1330;
+    --card:#241a3a;
+    --card-hover:#2e2249;
+    --text:#f5f0ff;
+    --muted:#b3a8cc;
+    --accent:#ff4d8d;     /* hot funk pink */
+    --accent2:#ffce3a;    /* gold */
+    --accent3:#36e0c8;    /* electric teal */
+    --line:rgba(255,255,255,.10);
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{-webkit-text-size-adjust:100%}
+  body{
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    background:
+      radial-gradient(1200px 600px at 50% -10%, rgba(255,77,141,.18), transparent 60%),
+      radial-gradient(900px 500px at 100% 20%, rgba(54,224,200,.12), transparent 55%),
+      radial-gradient(900px 600px at 0% 80%, rgba(255,206,58,.10), transparent 55%),
+      var(--bg);
+    color:var(--text);
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    padding:32px 18px 56px;
+    line-height:1.5;
+  }
+  .wrap{width:100%;max-width:480px}
+
+  /* Header */
+  .hero{text-align:center;margin-bottom:26px}
+  .avatar{
+    width:116px;height:116px;border-radius:50%;object-fit:cover;
+    margin:0 auto 18px;display:block;
+    border:3px solid rgba(255,255,255,.15);
+    box-shadow:0 6px 22px rgba(255,77,141,.30);
+  }
+  .badge{
+    display:inline-block;font-size:11px;letter-spacing:.18em;text-transform:uppercase;
+    color:var(--accent2);border:1px solid var(--line);border-radius:999px;
+    padding:6px 14px;margin-bottom:18px;background:rgba(255,255,255,.03);
+  }
+  h1{
+    font-size:40px;line-height:1.05;font-weight:800;letter-spacing:-.02em;
+    background:linear-gradient(92deg,var(--accent),var(--accent2) 60%,var(--accent3));
+    -webkit-background-clip:text;background-clip:text;color:transparent;
+    margin-bottom:8px;
+  }
+  .tagline{color:var(--muted);font-size:15px;max-width:340px;margin:0 auto}
+
+  /* Section label */
+  .label{
+    font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);
+    margin:30px 4px 12px;display:flex;align-items:center;gap:10px;
+  }
+  .label::after{content:"";flex:1;height:1px;background:var(--line)}
+
+  /* Release cards */
+  .release{
+    display:flex;align-items:center;gap:14px;
+    background:var(--card);border:1px solid var(--line);border-radius:18px;
+    padding:14px;margin-bottom:14px;text-decoration:none;color:var(--text);
+    transition:transform .15s ease,background .15s ease,border-color .15s ease;
+  }
+  .release:hover{transform:translateY(-2px);background:var(--card-hover);border-color:rgba(255,77,141,.5)}
+  .cover{
+    width:72px;height:72px;border-radius:12px;flex:none;object-fit:cover;
+    background:linear-gradient(135deg,var(--accent),var(--accent2));
+    box-shadow:0 4px 14px rgba(0,0,0,.35);
+  }
+  .release .meta{flex:1;min-width:0}
+  .release .title{font-weight:700;font-size:17px}
+  .release .sub{color:var(--muted);font-size:13px;margin-top:2px}
+  .cta{
+    font-size:13px;font-weight:700;color:#1a1024;background:var(--accent2);
+    padding:8px 14px;border-radius:999px;flex:none;white-space:nowrap;
+  }
+  .release.teal .cta{background:var(--accent3)}
+
+  /* Social grid */
+  .socials{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin-top:6px}
+  .social{
+    display:flex;align-items:center;gap:10px;justify-content:center;
+    background:rgba(255,255,255,.04);border:1px solid var(--line);border-radius:14px;
+    padding:14px;text-decoration:none;color:var(--text);font-weight:600;font-size:14px;
+    transition:background .15s ease,border-color .15s ease;
+  }
+  .social:hover{background:rgba(255,255,255,.09);border-color:var(--accent)}
+  .social .dot{width:8px;height:8px;border-radius:50%;background:var(--accent3);flex:none}
+
+  /* Bio */
+  .bio{
+    background:rgba(255,255,255,.03);border:1px solid var(--line);border-radius:16px;
+    padding:18px 18px;margin-top:8px;color:var(--muted);font-size:14px;
+  }
+  .bio strong{color:var(--text)}
+
+  footer{text-align:center;color:var(--muted);font-size:12px;margin-top:34px;opacity:.8}
+  footer a{color:var(--accent3);text-decoration:none}
+</style>
+</head>
+<body>
+  <main class="wrap">
+    <section class="hero">
+      <img class="avatar" src="tommy.jpg?v=4" alt="Tommy Kneeland" onerror="this.style.display='none'" />
+      <span class="badge">Funk · Jazz · Brass</span>
+      <h1>Tommy Kneeland</h1>
+      <p class="tagline">Hardcore funkateer. Arranger for Hill House.<br>Two new solo singles dropping this July.</p>
+    </section>
+
+    <div class="label">New Music · Pre-Save</div>
+
+    <a class="release" href="https://distrokid.com/hyperfollow/tommykneeland/hey-v" target="_blank" rel="noopener">
+      <img class="cover" src="hey-v.jpg" alt="Hey V cover art" />
+      <div class="meta">
+        <div class="title">Hey V</div>
+        <div class="sub">Single · Out July 9, 2026</div>
+      </div>
+      <div class="cta">Pre-Save</div>
+    </a>
+
+    <a class="release teal" href="https://distrokid.com/hyperfollow/tommykneeland/cant-touch-the-funk" target="_blank" rel="noopener">
+      <img class="cover" src="cant-touch-the-funk.jpg" alt="Can't Touch The Funk cover art" />
+      <div class="meta">
+        <div class="title">Can't Touch The Funk</div>
+        <div class="sub">Single · Out July 23, 2026</div>
+      </div>
+      <div class="cta">Pre-Save</div>
+    </a>
+
+    <div class="label">Follow</div>
+    <div class="socials">
+      <a class="social" href="https://www.instagram.com/pookman4/" target="_blank" rel="noopener"><span class="dot"></span>Instagram</a>
+      <a class="social" href="https://www.tiktok.com/@pookman4" target="_blank" rel="noopener"><span class="dot"></span>TikTok</a>
+      <a class="social" href="https://www.youtube.com/channel/UCTbDlR1FHg7GQolcHjj5XPw" target="_blank" rel="noopener"><span class="dot"></span>YouTube</a>
+      <a class="social" href="https://www.hillhousetheband.com/" target="_blank" rel="noopener"><span class="dot"></span>Hill House</a>
+    </div>
+
+    <div class="label">About</div>
+    <div class="bio">
+      <strong>Tommy Kneeland</strong> is a Boston-based funk and jazz horn player and a multi-instrumentalist who specializes in brass, playing every brass instrument there is. He's the lead trumpet player and primary instrumental arranger for Boston funk-pop band <strong>Hill House</strong>. He earned degrees in both computer science and music from WPI, and works a software day job while writing and recording funk by night.
+    </div>
+
+    <footer>
+      © <span id="yr"></span> Tommy Kneeland · Booking &amp; press: <a href="mailto:pookman40@gmail.com">pookman40@gmail.com</a>
+    </footer>
+  </main>
+  <script>document.getElementById('yr').textContent=new Date().getFullYear();</script>
+</body>
+</html>
