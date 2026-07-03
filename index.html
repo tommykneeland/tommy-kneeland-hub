@@ -94,6 +94,26 @@
   .cover.gradient-hh{background:linear-gradient(135deg,var(--accent3),var(--accent2))}
   .release.spotify .cta{background:#1DB954;color:#000}
 
+  /* Preview play button (overlaid on cover art) */
+  .release-wrap{position:relative}
+  .playbtn{
+    position:absolute;left:51px;top:50%;transform:translate(-50%,-50%);
+    width:36px;height:36px;border-radius:50%;z-index:2;cursor:pointer;
+    border:1.5px solid rgba(255,255,255,.85);
+    background:rgba(0,0,0,.55);color:#fff;
+    display:flex;align-items:center;justify-content:center;
+    box-shadow:0 2px 10px rgba(0,0,0,.45);
+    -webkit-backdrop-filter:blur(2px);backdrop-filter:blur(2px);
+    transition:background .15s ease,transform .15s ease,border-color .15s ease;
+  }
+  .release-wrap:hover .playbtn{transform:translate(-50%,-50%) translateY(-2px)}
+  .playbtn:hover,.playbtn.playing{background:var(--accent);border-color:#fff}
+  .playbtn svg{width:15px;height:15px;display:block;fill:currentColor}
+  .playbtn .ic-play{margin-left:2px}       /* optical centering of the triangle */
+  .playbtn .ic-pause{display:none}
+  .playbtn.playing .ic-play{display:none}
+  .playbtn.playing .ic-pause{display:block;margin-left:0}
+
   /* Social grid */
   .socials{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin-top:6px}
   .social{
@@ -127,23 +147,37 @@
 
     <div class="label">New Music · Pre-Save</div>
 
-    <a class="release" href="https://ffm.to/hey-v" target="_blank" rel="noopener">
-      <img class="cover" src="hey-v.jpg" alt="Hey V cover art" />
-      <div class="meta">
-        <div class="title">Hey V</div>
-        <div class="sub">Single · Out July 9, 2026</div>
-      </div>
-      <div class="cta">Pre-Save</div>
-    </a>
+    <div class="release-wrap">
+      <a class="release" href="https://ffm.to/hey-v" target="_blank" rel="noopener">
+        <img class="cover" src="hey-v.jpg" alt="Hey V cover art" />
+        <div class="meta">
+          <div class="title">Hey V</div>
+          <div class="sub">Single · Out July 9, 2026</div>
+        </div>
+        <div class="cta">Pre-Save</div>
+      </a>
+      <button class="playbtn" id="btn-hey-v" type="button" aria-label="Play preview of Hey V" onclick="togglePreview(event,'hey-v')">
+        <svg class="ic-play" viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>
+        <svg class="ic-pause" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 5h4v14H6zM14 5h4v14h-4z"/></svg>
+      </button>
+      <audio id="audio-hey-v" class="preview" src="hey-v-preview.m4a" preload="none"></audio>
+    </div>
 
-    <a class="release teal" href="https://ffm.to/cant-touch-the-funk" target="_blank" rel="noopener">
-      <img class="cover" src="cant-touch-the-funk.jpg" alt="Can't Touch The Funk cover art" />
-      <div class="meta">
-        <div class="title">Can't Touch The Funk</div>
-        <div class="sub">Single · Out July 23, 2026</div>
-      </div>
-      <div class="cta">Pre-Save</div>
-    </a>
+    <div class="release-wrap">
+      <a class="release teal" href="https://ffm.to/cant-touch-the-funk" target="_blank" rel="noopener">
+        <img class="cover" src="cant-touch-the-funk.jpg" alt="Can't Touch The Funk cover art" />
+        <div class="meta">
+          <div class="title">Can't Touch The Funk</div>
+          <div class="sub">Single · Out July 23, 2026</div>
+        </div>
+        <div class="cta">Pre-Save</div>
+      </a>
+      <button class="playbtn" id="btn-cant-touch-the-funk" type="button" aria-label="Play preview of Can't Touch The Funk" onclick="togglePreview(event,'cant-touch-the-funk')">
+        <svg class="ic-play" viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>
+        <svg class="ic-pause" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 5h4v14H6zM14 5h4v14h-4z"/></svg>
+      </button>
+      <audio id="audio-cant-touch-the-funk" class="preview" src="cant-touch-the-funk-preview.m4a" preload="none"></audio>
+    </div>
 
     <div class="label">With Hill House</div>
 
@@ -191,7 +225,31 @@
       © <span id="yr"></span> Tommy Kneeland · Booking &amp; press: <a href="mailto:pookman40@gmail.com">pookman40@gmail.com</a>
     </footer>
   </main>
-  <script>document.getElementById('yr').textContent=new Date().getFullYear();</script>
+  <script>
+    document.getElementById('yr').textContent=new Date().getFullYear();
+
+    // Audio previews: play one at a time, reset button when a clip ends.
+    function togglePreview(e,id){
+      e.preventDefault(); e.stopPropagation();
+      var audio=document.getElementById('audio-'+id);
+      var btn=document.getElementById('btn-'+id);
+      document.querySelectorAll('audio.preview').forEach(function(a){
+        if(a!==audio) a.pause();
+      });
+      document.querySelectorAll('.playbtn.playing').forEach(function(b){
+        if(b!==btn) b.classList.remove('playing');
+      });
+      if(audio.paused){ audio.play(); btn.classList.add('playing'); }
+      else{ audio.pause(); btn.classList.remove('playing'); }
+    }
+    document.querySelectorAll('audio.preview').forEach(function(a){
+      a.addEventListener('ended',function(){
+        a.currentTime=0;
+        var btn=document.getElementById('btn-'+a.id.slice(6));
+        if(btn) btn.classList.remove('playing');
+      });
+    });
+  </script>
   <!-- Cloudflare Web Analytics -->
   <script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "3119658c18bf4efbb3721e62923f0a65"}'></script>
   <!-- End Cloudflare Web Analytics -->
