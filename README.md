@@ -1,9 +1,10 @@
 # Tommy Kneeland — Hub
 
 Single-page link hub for Tommy Kneeland (funk/jazz horn player, @pookman4).
-Pre-save links for the solo singles, socials, and bio.
+Pre-save links for the solo singles, socials, bio, and short audio previews
+of each solo single (play button on the cover art).
 
-Static site — just `index.html` plus image assets. No build step.
+Static site — just `index.html` plus image and `*-preview.m4a` audio assets. No build step.
 
 ## Deploy
 Hosted on Netlify, connected to this GitHub repo. Pushing to `main` auto-deploys.
