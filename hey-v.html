@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Hey V · Tommy Kneeland</title>
+<meta name="description" content="Hey V, the new single from Tommy Kneeland. Out now on Spotify and everywhere." />
+<meta property="og:title" content="Hey V · Tommy Kneeland" />
+<meta property="og:description" content="New single from Tommy Kneeland. Out now." />
+<meta property="og:type" content="music.song" />
+<meta property="og:image" content="hey-v.jpg" />
+<style>
+  :root{
+    --bg:#120d1a;
+    --card:#241a3a;
+    --text:#f5f0ff;
+    --muted:#b3a8cc;
+    --accent:#ff4d8d;
+    --accent2:#ffce3a;
+    --accent3:#36e0c8;
+    --line:rgba(255,255,255,.10);
+    --spotify:#1DB954;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{-webkit-text-size-adjust:100%}
+  body{
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    background:
+      radial-gradient(1200px 600px at 50% -10%, rgba(255,77,141,.18), transparent 60%),
+      radial-gradient(900px 500px at 100% 20%, rgba(54,224,200,.12), transparent 55%),
+      radial-gradient(900px 600px at 0% 80%, rgba(255,206,58,.10), transparent 55%),
+      var(--bg);
+    color:var(--text);
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    padding:32px 18px;
+    line-height:1.5;
+  }
+  .wrap{width:100%;max-width:400px;text-align:center}
+
+  .cover-wrap{margin:0 auto 26px;width:260px;height:260px}
+  .cover{
+    width:260px;height:260px;border-radius:20px;object-fit:cover;display:block;
+    box-shadow:0 14px 40px rgba(0,0,0,.5);
+  }
+
+  .kicker{
+    font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--accent2);
+    margin-bottom:10px;
+  }
+  h1{font-size:38px;font-weight:800;letter-spacing:-.02em;margin-bottom:6px}
+  .artist{color:var(--muted);font-size:16px;margin-bottom:28px}
+
+  .platforms{display:flex;flex-direction:column;gap:12px}
+  .stream-btn{
+    display:flex;align-items:center;justify-content:center;gap:10px;
+    font-weight:800;font-size:17px;
+    padding:16px 24px;border-radius:999px;text-decoration:none;
+    transition:transform .15s ease,box-shadow .15s ease;
+  }
+  .stream-btn svg{width:22px;height:22px}
+  .stream-btn:hover{transform:translateY(-2px)}
+
+  .stream-btn.spotify{background:var(--spotify);color:#000;box-shadow:0 8px 26px rgba(29,185,84,.35)}
+  .stream-btn.spotify:hover{box-shadow:0 10px 30px rgba(29,185,84,.45)}
+  .stream-btn.spotify svg{fill:#000}
+
+  .stream-btn.apple{background:#000;color:#fff;border:1px solid rgba(255,255,255,.15);box-shadow:0 8px 26px rgba(0,0,0,.45)}
+  .stream-btn.apple:hover{box-shadow:0 10px 30px rgba(0,0,0,.55)}
+  .stream-btn.apple svg{fill:#fff}
+
+  .stream-btn.youtube{background:#FF0000;color:#fff;box-shadow:0 8px 26px rgba(255,0,0,.35)}
+  .stream-btn.youtube:hover{box-shadow:0 10px 30px rgba(255,0,0,.45)}
+  .stream-btn.youtube svg{fill:#fff}
+
+  .other{
+    display:block;margin-top:18px;color:var(--muted);font-size:15px;
+    text-decoration:none;border-bottom:1px solid transparent;
+  }
+  .other:hover{color:var(--text);border-color:var(--muted)}
+
+  footer{margin-top:38px;color:var(--muted);font-size:14px;opacity:.85}
+  footer a{color:var(--accent3);text-decoration:none;font-weight:600}
+  footer a:hover{text-decoration:underline}
+</style>
+</head>
+<body>
+  <main class="wrap">
+    <div class="cover-wrap">
+      <img class="cover" src="hey-v.jpg" alt="Hey V cover art" />
+    </div>
+
+    <div class="kicker">New Single · Out Now</div>
+    <h1>Hey V</h1>
+    <div class="artist">Tommy Kneeland</div>
+
+    <div class="platforms">
+      <a class="stream-btn spotify" href="https://open.spotify.com/track/7cQMre8vEkJUbU2ODrmSfd" target="_blank" rel="noopener" onclick="fbq('track','Lead')">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.59 14.41c-.19.31-.59.41-.9.22-2.47-1.51-5.58-1.85-9.24-1.01-.35.08-.7-.14-.78-.49-.08-.35.14-.7.49-.78 4-.92 7.43-.52 10.21 1.17.31.19.41.59.22.89zm1.22-2.72c-.24.39-.74.51-1.13.27-2.83-1.74-7.14-2.25-10.49-1.23-.43.13-.89-.11-1.02-.54-.13-.43.11-.89.54-1.02 3.83-1.16 8.59-.59 11.83 1.39.39.24.51.75.27 1.13zm.11-2.83C14.02 8.97 8.85 8.79 5.84 9.72c-.52.16-1.07-.14-1.23-.65-.16-.52.14-1.07.65-1.23 3.46-1.06 9.19-.85 12.79 1.31.47.28.62.89.34 1.36-.28.46-.89.62-1.36.33z"/></svg>
+        Stream on Spotify
+      </a>
+
+      <a class="stream-btn apple" href="https://geo.music.apple.com/us/album/hey-v-single/6780215081?app=music&ls=1&ct=FFM_45f3ffe7917bbfdbcd134104cdc1786d&at=1001lwQy" target="_blank" rel="noopener" onclick="fbq('track','Lead')">
+        <svg viewBox="0 0 384 512" aria-hidden="true"><path d="M318.7 268.7c-.2-36.7 16.4-64.4 50-84.8-18.8-26.9-47.2-41.7-84.7-44.6-35.5-2.8-74.3 20.7-88.5 20.7-15 0-49.4-19.7-76-19.7C63.3 141 4 184.8 4 273.5q0 39.3 14.4 81.2c12.8 36.7 59 126.7 107.2 125.2 25.2-.6 43-17.9 75.8-17.9 31.8 0 48.3 17.9 76.4 17.9 48.6-.7 90.4-82.5 102.6-119.3-65.2-30.7-61.7-90-61.7-91.9zm-56.6-164.2c27.3-32.4 24.8-61.9 24-72.5-24.1 1.4-52 16.4-67.9 34.9-17.5 19.8-27.8 44.3-25.6 71.9 26.1 2 49.9-11.4 69.5-34.3z"/></svg>
+        Listen on Apple Music
+      </a>
+
+      <a class="stream-btn youtube" href="https://music.youtube.com/playlist?list=OLAK5uy_mlzLQfRlQXOY77TyYeljl6A-ksdK4qpjg&src=FFM&lid=00000000-6a3e-8133-3700-004200773410&cid=eef267f6-3f51-5d46-a717-711ac12bcf76" target="_blank" rel="noopener" onclick="fbq('track','Lead')">
+        <svg viewBox="0 0 576 512" aria-hidden="true"><path d="M549.7 124.1c-6.3-23.7-24.8-42.3-48.3-48.6C458.8 64 288 64 288 64S117.2 64 74.6 75.5c-23.5 6.3-42 24.9-48.3 48.6-11.4 42.9-11.4 132.3-11.4 132.3s0 89.4 11.4 132.3c6.3 23.7 24.8 41.5 48.3 47.8C117.2 448 288 448 288 448s170.8 0 213.4-11.5c23.5-6.3 42-24.2 48.3-47.8 11.4-42.9 11.4-132.3 11.4-132.3s0-89.4-11.4-132.3zm-317.5 213.5V175.2l142.7 81.2-142.7 81.2z"/></svg>
+        Listen on YouTube Music
+      </a>
+    </div>
+
+    <a class="other" href="https://ffm.to/hey-v" target="_blank" rel="noopener">More platforms</a>
+
+    <footer>
+      Tommy Kneeland · <a href="https://tommykneeland.com">tommykneeland.com</a>
+    </footer>
+  </main>
+  <!-- Meta Pixel Code -->
+  <script>
+  !function(f,b,e,v,n,t,s)
+  {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+  n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+  if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+  n.queue=[];t=b.createElement(e);t.async=!0;
+  t.src=v;s=b.getElementsByTagName(e)[0];
+  s.parentNode.insertBefore(t,s)}(window, document,'script',
+  'https://connect.facebook.net/en_US/fbevents.js');
+  fbq('init', '1571809971207727');
+  fbq('track', 'PageView');
+  </script>
+  <noscript><img height="1" width="1" style="display:none"
+  src="https://www.facebook.com/tr?id=1571809971207727&ev=PageView&noscript=1"
+  /></noscript>
+  <!-- End Meta Pixel Code -->
+  <!-- Cloudflare Web Analytics -->
+  <script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "3119658c18bf4efbb3721e62923f0a65"}'></script>
+  <!-- End Cloudflare Web Analytics -->
+</body>
+</html>
